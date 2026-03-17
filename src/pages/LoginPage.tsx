@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react'
+import type React from 'react'
+import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../state/authStore'
 
@@ -17,7 +18,7 @@ export function LoginPage() {
 
   const from = (location.state as LocationState | null)?.from ?? '/'
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setIsSubmitting(true)
 
